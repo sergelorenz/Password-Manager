@@ -14,21 +14,17 @@ nr_symbols = random.randint(2, 4)
 def generate_random_password():
     password = []
 
+    # You can use random.choice(_list_) to choose letter from a list of letters
     for n in range(nr_letters):
-        rand_letters = random.randrange(len(letters))
-        password.extend(letters[rand_letters])
+        password.append(random.choice(letters))
 
     for n in range(nr_numbers):
-        rand_numbers = random.randrange(len(numbers))
-        password.extend(numbers[rand_numbers])
+        password.append(random.choice(numbers))
 
     for n in range(nr_symbols):
-        rand_symbols = random.randrange(len(symbols))
-        password.extend(symbols[rand_symbols])
+        password.append(random.choice(symbols))
 
-    password_list = ""
     random.shuffle(password)
 
-    for n in password:
-        password_list += n
-    return password_list
+    # joins list of characters into a continuuous string
+    return password.join('')
