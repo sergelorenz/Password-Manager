@@ -27,4 +27,4 @@ def generate_random_password():
     random.shuffle(password)
 
     # joins list of characters into a continuuous string
-    return password.join('')
+    return ''.join(password)
